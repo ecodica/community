@@ -1,0 +1,6 @@
+<odoo>
+    <record id="custom_import_group_user" model="res.groups">
+        <field name="name">Custom Import</field>
+        <field name="comment">Only responsible can access import functionallity</field>
+    </record>
+</odoo>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="custom_import_wizard_view_form" model="ir.ui.view">
+        <field name="name">custom.import.wizard.form</field>
+        <field name="model">custom.import.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Import">
+                <group col="2">
+                    <field name="original_file_name" invisible="1"/>
+                    <field name="original_file" widget="binary" filename="original_file_name"/>
+                </group>
+                <footer>
+                    <button
+                        name="test_import"
+                        string="Test Import"
+                        class="oe_highlight"
+                        type="object"
+                        default_focus="1"
+                    />
+                    <button
+                        name="final_import"
+                        string="Final Import"
+                        type="object"
+                        class="oe_highlight"
+                        confirm="Are you sure?"
+                    />
+                    <button
+                        name="print_sample_xlsx"
+                        string="Sample Format"
+                        class="btn btn-default"
+                        type="object"
+                    />
+                    <button string="Cancel" class="btn btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

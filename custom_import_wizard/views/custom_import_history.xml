@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <!-- custom.import.history form view -->
+    <record id="custom_import_history_view_form" model="ir.ui.view">
+        <field name="name">custom.import.history.view.form</field>
+        <field name="model">custom.import.history</field>
+        <field name="arch" type="xml">
+            <form string="Import History" create="false" duplicate="false">
+                <sheet>
+                    <group>
+                        <field name="user_id" string="Imported by"/>
+                        <field name="model"/>
+                        <field name="original_file_name" invisible="1"/>
+                        <field name="formatted_file_name" invisible="1"/>
+                        <field name="original_file" widget="binary" filename="original_file_name" />
+                        <field name="formatted_file" widget="binary" filename="formatted_file_name"/>
+                        <field name="total_imported"/>
+                        <field name="total_duplicated"/>
+                        <field name="total_errors"/>
+                        <field name="extra_info" widget="text"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- crm.lead.import.history tree view -->
+    <record id="custom_import_history_view_tree" model="ir.ui.view">
+        <field name="name">custom.import.history.view.tree</field>
+        <field name="model">custom.import.history</field>
+        <field name="arch" type="xml">
+            <tree import ="false" create="false">
+                <field name="model"/>
+                <field name="name"/>
+                <field name="user_id"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
