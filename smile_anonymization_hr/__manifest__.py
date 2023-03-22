@@ -17,7 +17,7 @@
     "category": 'Tools',
     "sequence": 20,
     "data": [],
-    "auto_install": True,
+    "auto_install": False,
     "installable": True,
     "application": False,
 }
