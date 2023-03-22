@@ -46,5 +46,5 @@ class HrEmployee(models.Model):
 
     _inherit = "hr.employee"
 
-    grade_id = fields.Many2one("grade.grade", "Grade")
-    rank_id = fields.Many2one("rank.rank", "Rank")
+    grade_id = fields.Many2one("grade.grade", "Grade", groups="hr.group_hr_user")
+    rank_id = fields.Many2one("rank.rank", "Rank", groups="hr.group_hr_user")
