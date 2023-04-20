@@ -168,7 +168,6 @@ class WageDetails(models.Model):
             'employee_name': self.employee_id,
             'updated_date': datetime.today(),
             'current_value': self.wage,
-
         }
         self.env['salary.history'].sudo().create(vals)
 
@@ -180,7 +179,6 @@ class WageDetails(models.Model):
             'updated_date': datetime.today(),
             'changed_field': 'Contract Reference',
             'current_value': self.name,
-
         }
         self.env['contract.history'].create(vals)
 
@@ -204,13 +202,13 @@ class WageDetails(models.Model):
             'updated_date': datetime.today(),
             'changed_field': 'End Date',
             'current_value': self.date_end,
-
         }
         self.env['contract.history'].create(vals)
 
 
 class DepartmentHistory(models.Model):
     _name = 'department.history'
+    _description = "Department History"
 
     employee_id = fields.Char(string='Employee Id', help="Employee")
     employee_name = fields.Char(string='Employee Name', help="Name")
@@ -221,6 +219,7 @@ class DepartmentHistory(models.Model):
 
 class TimesheetCost(models.Model):
     _name = 'timesheet.cost'
+    _description = "Timesheet Cost"
 
     employee_id = fields.Char(string='Employee Id', help="Employee")
     employee_name = fields.Char(string='Employee Name', help="Name")
@@ -230,6 +229,7 @@ class TimesheetCost(models.Model):
 
 class SalaryHistory(models.Model):
     _name = 'salary.history'
+    _description = "Salary History"
 
     employee_id = fields.Char(string='Employee Id', help="Employee")
     employee_name = fields.Char(string='Employee Name', help="Name")
@@ -239,6 +239,7 @@ class SalaryHistory(models.Model):
 
 class ContractHistory(models.Model):
     _name = 'contract.history'
+    _description = "Contract History"
 
     employee_id = fields.Char(string='Employee Id', help="Employee")
     employee_name = fields.Char(string='Employee Name', help="Name")
