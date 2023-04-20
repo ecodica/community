@@ -9,12 +9,14 @@ class ResUsersInherit(models.Model):
                                   string='Related Employee', ondelete='restrict', auto_join=True,
                                   help='Employee-related data of the user')
 
-    @api.model
-    def create(self, vals):
+    @api.model_create_multi
+    def create(self, vals_list):
         """This code is to create an employee while creating an user."""
-
-        result = super(ResUsersInherit, self).create(vals)
-        result['employee_id'] = self.env['hr.employee'].sudo().create({'name': result['name'],
-                                                                       'user_id': result['id'],
-                                                                       'address_home_id': result['partner_id'].id})
-        return result
+        users = super(ResUsersInherit, self).create(vals_list)
+        for user in users:
+            employee = self.env['hr.employee'].sudo().create(
+                {'name': user.name,
+                 'user_id': user.id,
+                 #'address_home_id': user.partner_id.id
+                 })
+        return users

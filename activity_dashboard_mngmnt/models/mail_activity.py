@@ -32,10 +32,7 @@ from odoo.exceptions import UserError
 class MailActivity(models.Model):
     _inherit = "mail.activity"
 
-    state = fields.Selection([
-        ('overdue', 'Overdue'), ('today', 'Today'), ('planned', 'Planned'),
-        ('done', 'Done'), ('cancel', 'Cancelled')], 'State',
-        compute='_compute_state', store=True)
+    state = fields.Selection(selection_add=[('done', 'Done'), ('cancel', 'Cancelled')])
     active = fields.Boolean('Active', default=True)
 
     type = fields.Selection(
