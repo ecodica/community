@@ -31,7 +31,8 @@ class BaseModuleExport(models.TransientModel):
     ], 'Records only', required=True, default='create_write')
     model_ids = fields.Many2many(
         'ir.model', string='Models', domain=[('transient', '=', False)])
-    file = fields.Binary(filename='filename', readonly=True)
+#    file = fields.Binary(filename='filename', readonly=True)
+    file = fields.Binary(readonly=True)
     filename = fields.Char(size=64, required=True, default='data_module.zip')
     filetype = fields.Selection([
         ('csv', 'CSV'),
