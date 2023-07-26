@@ -1,0 +1,101 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* base_ux
+# 
+# Translators:
+# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2023
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-13 13:46+0000\n"
+"PO-Revision-Date: 2023-01-13 13:46+0000\n"
+"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2023\n"
+"Language-Team: Spanish (https://www.transifex.com/adhoc/teams/46451/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#. module: base_ux
+#: model:ir.model,name:base_ux.model_ir_actions_act_window
+msgid "Action Window"
+msgstr "Acción de ventana"
+
+#. module: base_ux
+#: model:ir.model.fields,field_description:base_ux.field_mail_template__active
+#: model:ir.model.fields,field_description:base_ux.field_res_company__active
+#: model:ir.model.fields,field_description:base_ux.field_res_partner__active
+#: model_terms:ir.ui.view,arch_db:base_ux.view_company_search
+#: model_terms:ir.ui.view,arch_db:base_ux.view_mail_template_search
+msgid "Active"
+msgstr "Activo"
+
+#. module: base_ux
+#: model:ir.model,name:base_ux.model_mail_activity
+msgid "Activity"
+msgstr "Actividad"
+
+#. module: base_ux
+#: model_terms:ir.ui.view,arch_db:base_ux.view_window_action_form
+msgid "Add in the 'Action' menu"
+msgstr ""
+
+#. module: base_ux
+#: model:ir.model.fields,field_description:base_ux.field_ir_actions_act_window__algolia_search
+#: model:ir.model.fields,field_description:base_ux.field_ir_actions_server__algolia_search
+#: model:ir.model.fields,field_description:base_ux.field_mail_activity__algolia_search
+#: model:ir.model.fields,field_description:base_ux.field_mail_template__algolia_search
+#: model:ir.model.fields,field_description:base_ux.field_res_company__algolia_search
+#: model:ir.model.fields,field_description:base_ux.field_res_country_state__algolia_search
+#: model:ir.model.fields,field_description:base_ux.field_res_partner__algolia_search
+msgid "Algolia Search"
+msgstr ""
+
+#. module: base_ux
+#: model_terms:ir.ui.view,arch_db:base_ux.view_company_search
+#: model_terms:ir.ui.view,arch_db:base_ux.view_mail_template_search
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: base_ux
+#: model:ir.model,name:base_ux.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: base_ux
+#: model:ir.model,name:base_ux.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: base_ux
+#: model:ir.model,name:base_ux.model_res_country_state
+msgid "Country state"
+msgstr "Provincia"
+
+#. module: base_ux
+#: model_terms:ir.ui.view,arch_db:base_ux.view_window_action_form
+msgid "Display an option on related documents to open this action"
+msgstr ""
+
+#. module: base_ux
+#: model:ir.model,name:base_ux.model_mail_template
+msgid "Email Templates"
+msgstr "Plantillas de correo electrónico"
+
+#. module: base_ux
+#: model_terms:ir.ui.view,arch_db:base_ux.view_window_action_form
+msgid "Remove from the 'Action' menu"
+msgstr ""
+
+#. module: base_ux
+#: model_terms:ir.ui.view,arch_db:base_ux.view_window_action_form
+msgid "Remove the contextual action related this action"
+msgstr ""
+
+#. module: base_ux
+#: model:ir.model,name:base_ux.model_ir_actions_server
+msgid "Server Action"
+msgstr "Acción de servidor"

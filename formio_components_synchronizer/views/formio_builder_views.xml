@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright Nova Code (http://www.novacode.nl)
+     See LICENSE file for full licensing details. -->
+
+<odoo>
+    <record id="view_formio_builder_form_inherit" model="ir.ui.view">
+        <field name="name">formio.builder.component</field>
+        <field name="model">formio.builder</field>
+        <field name="inherit_id" ref="formio.view_formio_builder_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']/button[@name='action_view_forms']" position="before">
+                <!-- TODO stat_info count -->
+                <button name="action_view_components" type="object" string="Components"
+                        groups="formio.group_formio_admin" icon="fa-bars"/>
+            </xpath>
+
+            <xpath expr="//page[@name='formio_components_api']/group[@name='main']" position="inside">
+                <group>
+                    <field name="component_sync_active" widget="boolean_toggle"/>
+                </group>
+                <group>
+                    <div class="mb-2 text-muted" colspan="2">
+                        <i class="fa fa-info-circle" title="info"/>
+                        By enabling "Synchronize Components" all components created/updated/deleted in the Form Builder will be automatically synchronized as <code>formio.component</code> records.
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

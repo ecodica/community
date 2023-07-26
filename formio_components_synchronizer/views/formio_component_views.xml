@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright Nova Code (http://www.novacode.nl)
+See LICENSE file for full licensing details. -->
+
+<odoo>
+    <record id="view_formio_component_tree" model="ir.ui.view">
+        <field name="name">formio.component.tree</field>
+        <field name="model">formio.component</field>
+        <field name="arch" type="xml">
+            <tree string="Component" create="false">
+                <field name="builder_id"/>
+                <field name="builder_title" optional="hide"/>
+                <field name="builder_name" optional="hide"/>
+                <field name="builder_version" optional="hide"/>
+                <field name="sequence" optional="hide"/>
+                <field name="path_label" optional="show"/>
+                <field name="path_key" optional="show"/>
+                <field name="input_path_label" optional="hide"/>
+                <field name="input_path_key" optional="hide"/>
+                <field name="label" optional="hide"/>
+                <field name="key" optional="hide"/>
+                <field name="type"/>
+                <field name="input"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_formio_builder_component_tree" model="ir.ui.view">
+        <field name="name">formio.builder.component.tree</field>
+        <field name="model">formio.component</field>
+        <field name="arch" type="xml">
+            <tree string="Component" create="false">
+                <field name="sequence" optional="hide"/>
+                <field name="label" optional="hide"/>
+                <field name="key" optional="hide"/>
+                <field name="path_label" optional="show"/>
+                <field name="path_key" optional="show"/>
+                <field name="input_path_label" optional="hide"/>
+                <field name="input_path_key" optional="hide"/>
+                <field name="type"/>
+                <field name="input"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_formio_component_form" model="ir.ui.view">
+        <field name="name">formio.component.form</field>
+        <field name="model">formio.component</field>
+        <field name="arch" type="xml">
+	    <form string="Form" create="false" delete="false" edit="false">
+                <sheet>
+                    <h1><field name="label"/></h1>
+                    <group colspan="2">
+                        <field name="path_label" string="Path Labels"/>
+                        <field name="path_key" string="Path Keys"/>
+                        <field name="input_path_key"/>
+                        <field name="key"/>
+                        <field name="type"/>
+                        <field name="input"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_formio_component_search" model="ir.ui.view">
+        <field name="name">formio.component.search</field>
+        <field name="model">formio.component</field>
+        <field name="arch" type="xml">
+            <search string="Components">
+                <field name="builder_id"/>
+                <field name="path_label"/>
+                <field name="path_key"/>
+                <field name="input_path_label"/>
+                <field name="input_path_key"/>
+                <field name="label"/>
+                <field name="key"/>
+                <field name="type"/>
+                <filter name="input" string="Input Components" domain="[('input', '=', True)]"/>
+                <filter name="input" string="Layout Components" domain="[('input', '=', False)]"/>                
+                <group expand="0" string="Group By">
+                    <filter string="Form Builder" name="group_builder_id" domain="[]" context="{'group_by':'builder_id'}"/>
+                    <filter string="Type" name="group_type" domain="[]" context="{'group_by':'type'}"/>
+                    <filter string="Input" name="group_input" domain="[]" context="{'group_by':'input'}"/>
+                    <separator/>
+                    <filter string="Parent Component" name="parent_id" domain="[]" context="{'group_by':'parent_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_formio_builder_component_search" model="ir.ui.view">
+        <field name="name">formio.builder.component.search</field>
+        <field name="model">formio.component</field>
+        <field name="arch" type="xml">
+            <search string="Components">
+                <field name="path_label"/>
+                <field name="path_key"/>
+                <field name="input_path_label"/>
+                <field name="input_path_key"/>
+                <field name="label"/>
+                <field name="key"/>
+                <field name="type"/>
+                <filter name="input" string="Input Components" domain="[('input', '=', True)]"/>
+                <filter name="input" string="Layout Components" domain="[('input', '=', False)]"/>                
+                <group expand="0" string="Group By">
+                    <filter string="Type" name="group_type" domain="[]" context="{'group_by':'type'}"/>
+                    <filter string="Input" name="group_input" domain="[]" context="{'group_by':'input'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_formio_component" model="ir.actions.act_window">
+        <field name="name">Components</field>
+        <field name="res_model">formio.component</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_formio_component_tree"/>
+    </record>
+
+    <record id="action_formio_builder_component" model="ir.actions.act_window">
+        <field name="name">Components</field>
+        <field name="res_model">formio.component</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_formio_builder_component_tree"/>
+    </record>
+</odoo>

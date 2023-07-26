@@ -5,6 +5,7 @@ import json
 import mimetypes
 from werkzeug.urls import url_decode
 
+from odoo import http
 from odoo.http import route, request, content_disposition
 
 from odoo.addons.web.controllers import report
@@ -52,7 +53,7 @@ class ReportController(report.ReportController):
             report = report.sudo()
         context['report_name'] = reportname
         context['return_filename'] = True
-        res, extension, filename = report.with_context(context)._render_aeroo(docids, data=data)
+        res, extension, filename = report.with_context(context)._render_aeroo(reportname, docids, data=data)
         mimetype = self.MIMETYPES.get(res, 'application/octet-stream')
         httpheaders = [
             ('Content-Disposition', content_disposition(filename)),

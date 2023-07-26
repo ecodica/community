@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright Nova Code (http://www.novacode.nl)
+See LICENSE file for full licensing details. -->
+
+<odoo>
+    <record id="view_formio_builder_form_inherit" model="ir.ui.view">
+        <field name="name">formio.builder.inherit</field>
+        <field name="model">formio.builder</field>
+        <field name="inherit_id" ref="formio.view_formio_builder_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='formio_components_api']/group[@name='partner']" position="inside">
+                <group string="reCAPTCHA Button" colspan="2">
+                    <div class="text-muted" colspan="2">
+                        <i class="fa fa-info-circle" title="info"/> Put the Site Key in the API (tab) property, in the Form Builder Component: (odoo) reCAPTCHA
+                    </div>
+                    <div class="text-muted mb8" colspan="2">
+                        <i class="fa fa-info-circle" title="info"/> Add the Site Key and Secret Key (Menu: Settings / General. Section: Integrations / reCAPTCHA)
+                    </div>
+                    <group name="recaptcha_button" colspan="2">
+                        <field name="component_recaptcha_button_active" string="Active" attrs="{'readonly': [('is_locked', '=', True)]}"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
