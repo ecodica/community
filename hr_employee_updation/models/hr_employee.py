@@ -42,7 +42,7 @@ class HrEmployeeFamilyInfo(models.Model):
                                   help="Relationship with the employee")
     member_name = fields.Char(string='Name')
     member_contact = fields.Char(string='Contact No')
-    birth_date = fields.Date(string="DOB", tracking=True)
+    birth_date = fields.Date(string="DOB")
 
 
 class HrEmployee(models.Model):
@@ -134,6 +134,7 @@ class EmployeeRelationInfo(models.Model):
     """Table for keep employee family information"""
 
     _name = 'hr.employee.relation'
+    _description = 'Employee Relation'
 
     name = fields.Char(string="Relationship",
                        help="Relationship with thw employee")
