@@ -30,6 +30,7 @@ import requests
 class EmployeeVerification(models.Model):
     _name = 'employee.verification'
     _rec_name = 'verification_id'
+    _description = 'Employee Verification'
 
     verification_id = fields.Char('ID', readonly=True, copy=False, help="Verification Id")
     employee = fields.Many2one('hr.employee', string='Employee', required=True,
@@ -46,7 +47,7 @@ class EmployeeVerification(models.Model):
     field_check = fields.Boolean(string='Check', invisible=True)
     assigned_date = fields.Date(string="Assigned Date", readonly=True, default=date.today(),
                                 help="Record Assigned Date")
-    expected_date = fields.Date(state='Expected Date', help='Expected date of completion of background verification')
+    expected_date = fields.Date(string='Expected Date', help='Expected date of completion of background verification')
     state = fields.Selection([
         ('draft', 'Draft'),
         ('assign', 'Assigned'),
