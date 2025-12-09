@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-import_history,import_history,model_custom_import_history,custom_import_wizard.custom_import_group_user,1,0,1,0
-import_custom_wizard,import_custom_wizard,model_custom_import_wizard,custom_import_wizard.custom_import_group_user,1,0,1,0
-info_result_import_wizard,info_result_import_wizard,model_info_result_import_wizard,custom_import_wizard.custom_import_group_user,1,0,1,0
-import_history_admin,import_history,model_custom_import_history,base.group_system,1,1,1,1
